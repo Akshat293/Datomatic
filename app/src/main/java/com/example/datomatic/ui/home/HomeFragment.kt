@@ -1,6 +1,7 @@
 package com.example.datomatic.ui.home
 
 import android.annotation.SuppressLint
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -58,8 +59,10 @@ class HomeFragment : Fragment() {
 
         newsAdapter.setOnItemClickListener {
             val intent = Intent(activity, TabActivity::class.java)
+            val options = ActivityOptions.makeCustomAnimation(requireContext(), android.R.anim.fade_in, android.R.anim.fade_out)
+            sessionManager.saveDocId(it._id)
             intent.putExtra("id",it)
-            startActivity(intent)
+            startActivity(intent,options.toBundle())
         }
         viewModel.newsLiveData.observe(viewLifecycleOwner) { response ->
             when (response) {
@@ -92,6 +95,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun initAdapter() {
+        sessionManager= SessionManager(requireContext())
         newsAdapter = DoctorAdapter(requireContext(),mQuestions)
         binding.newsAdapter.apply {
             adapter = newsAdapter

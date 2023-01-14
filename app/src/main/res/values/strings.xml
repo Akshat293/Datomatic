@@ -30,10 +30,31 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_tab">TabActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_1">Prescriptions</string>
+    <string name="tab_text_2">Reports</string>
     <string name="home">Home</string>
 
 
     <string name="no_internet">No Internet, check connection.</string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="row1Surname">Mohammad</string>
+    <string name="row2Name">Dave</string>
+    <string name="row2Age">45</string>
+    <string name="row2Surname">Smith</string>
+    <string name="row3Name">Jason</string>
+    <string name="row3Age">67</string>
+    <string name="row3Surname">William</string>
+    <string name="row1Name" translatable="false">Ali</string>
+    <string name="row1Age" translatable="false">51</string>
+
+    <string name="col1" translatable="false">RxNORM code</string>
+    <string name="col2" translatable="false">Medication Name</string>
+    <string name="col3" translatable="false">Dosage (in mg)</string>
+    <string name="col4" translatable="false">Route</string>
+    <string name="col5" translatable="false">Frequency</string>
+
+    <string name="description">Prescription</string>
+    <string name="visit_site">Visit site</string>
+
 </resources>

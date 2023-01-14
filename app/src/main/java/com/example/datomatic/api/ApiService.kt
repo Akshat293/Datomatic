@@ -1,15 +1,8 @@
 package com.example.datomatic.api
 
-import com.example.datomatic.models.Credentials
-import com.example.datomatic.models.Doctor
-import com.example.datomatic.models.Doctor_list
-import com.example.datomatic.models.Token
+import com.example.datomatic.models.*
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 
 
 interface ApiService {
@@ -24,4 +17,26 @@ interface ApiService {
     )
     @GET("/patient/get-doctors")
     fun getDoctor(@Header("authorization") Authorization:String ):Call<Doctor_list>
+
+
+    @GET("/patient/get-prescriptions/{doctorId}")
+    fun getPrescription(@Header("authorization") Authorization:String, @Path("doctorId") doctorId:String ):Call<Prescription>
+
+    @GET("/patient/get-reports/{doctorId}")
+    fun getReports(@Header("authorization") Authorization:String, @Path("doctorId") doctorId:String ):Call<Prescription>
+
+    @GET("/data/prescription/{prescriptionId}")
+    fun getPrecDetail(@Header("authorization") Authorization:String, @Path("prescriptionId") prescriptionId:String ):Call<PrescriptionDetail>
+
+    @POST("/patient/share-prescription")
+    fun sharePrec(@Header("authorization") Authorization:String, @Body share:Share):Call<Share_mess>
+
+
+
     }
+
+
+
+
+
+

@@ -19,6 +19,7 @@ class DoctorAdapter(private val context: Context , private var mlist:List<Doctor
      class DocViewHolder(view: View) : RecyclerView.ViewHolder(view){
          val doctor_name:TextView=view.findViewById(R.id.doctor_name)
          val last_date:TextView=view.findViewById(R.id.last_date)
+
      }
 
     private val callBack = object : DiffUtil.ItemCallback<Doctor>() {
