@@ -14,8 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.datomatic.R
 import com.example.datomatic.models.PrescriptionX
 
-class PrescriptionAdapter(private val context: Context) :
-    RecyclerView.Adapter<PrescriptionAdapter.DocViewHolder>() {
+class PrescriptionAdapter(private val context: Context) : RecyclerView.Adapter<PrescriptionAdapter.DocViewHolder>() {
     class DocViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val doctor_name: TextView = view.findViewById(R.id.doctor_name)
         val last_date: TextView = view.findViewById(R.id.last_date)
@@ -35,7 +34,7 @@ class PrescriptionAdapter(private val context: Context) :
 
     val differ = AsyncListDiffer(this, callBack)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DocViewHolder {
+    override fun onCreateViewHolder(parent:ViewGroup, viewType: Int): DocViewHolder {
         return DocViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_article1, parent, false)
         )

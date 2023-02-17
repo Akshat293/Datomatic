@@ -22,14 +22,16 @@ interface ApiService {
     @GET("/patient/get-prescriptions/{doctorId}")
     fun getPrescription(@Header("authorization") Authorization:String, @Path("doctorId") doctorId:String ):Call<Prescription>
 
-    @GET("/patient/get-reports/{doctorId}")
-    fun getReports(@Header("authorization") Authorization:String, @Path("doctorId") doctorId:String ):Call<Prescription>
+    @GET("/patient/get-reports/")
+    fun getReports(@Header("authorization") Authorization:String ):Call<Reports>
 
     @GET("/data/prescription/{prescriptionId}")
     fun getPrecDetail(@Header("authorization") Authorization:String, @Path("prescriptionId") prescriptionId:String ):Call<PrescriptionDetail>
 
     @POST("/patient/share-prescription")
     fun sharePrec(@Header("authorization") Authorization:String, @Body share:Share):Call<Share_mess>
+
+
 
 
 
